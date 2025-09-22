@@ -1,7 +1,9 @@
 <template>
     <div>
         <header>
-            <slot name="header"></slot>
+            <slot name="header">
+                <h2>The default</h2>
+            </slot>
         </header>
       <slot></slot>    
     </div>
@@ -9,10 +11,16 @@
 
 <script>
 export default{
+      
 }
 </script>
 
 <style scoped>
+ header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 div {
   margin: 2rem auto;
   max-width: 30rem;
