@@ -1,20 +1,24 @@
 <template>
   <section>
-    <div>
-      <h3>{{ fullName }}</h3>
-      <base-badge :type="role" :caption="role.toUpperCase()"></base-badge>
-    </div>
-    <p>{{ infoText }}</p>
+    <base-card>
+      <template v-slot:header>
+        <h3>{{ fullName }}</h3>
+        <base-badge :type="role" :caption="role.toUpperCase()"></base-badge>
+      </template>
+      <template v-slot:default>
+      <p>{{ infoText }}</p>
+      </template>
+    </base-card>
   </section>
 </template>
 
 <script>
 export default {
-  props: ['fullName', 'infoText', 'role'],
+  props: ["fullName", "infoText", "role"],
 };
 </script>
 
-<style>
+<style scoped>
 section {
   margin: 2rem auto;
   max-width: 30rem;
@@ -23,7 +27,7 @@ section {
   padding: 1rem;
 }
 
-section div {
+section header {
   display: flex;
   justify-content: space-between;
   align-items: center;
